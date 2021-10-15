@@ -15,17 +15,20 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id('user_id');
-            $table->string('user_lastname');
+            $table->foreignId('user_dep_id')->nullable()->constrained('departments','dep_id')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_status_id')->default(1)->constrained('user_statuses','status_id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_commercial_id')->nullable()->constrained('users','user_id')->onUpdate('cascade')->onDelete('cascade');
             $table->string('user_firstname');
+            $table->string('user_lastname');
             $table->string('user_address',255);
             $table->string('user_zipcode',5);
             $table->string('user_city',30);
+            $table->decimal('user_coef',5,2)->nullable()->default(1);
             $table->string('user_phone',10)->unique();
-            $table->decimal('salary',8,2)->nullable();
-            $table->char('user_gender',1)->nullable();
-            $table->string('user_email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->decimal('user_salary',8,2)->nullable();
+            $table->string('email',255)->unique();
+            $table->timestamp('user_email_verified_at')->nullable();
+            $table->string('user_password');
             $table->rememberToken();
             $table->timestamps();
         });
