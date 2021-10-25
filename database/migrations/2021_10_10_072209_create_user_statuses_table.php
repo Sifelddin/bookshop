@@ -13,7 +13,7 @@ class CreateUserStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_statuses', function (Blueprint $table) {
+        Schema::create('user_statuses', function (Blueprint $table){
             $table->id('status_id');
             $table->foreignId('general_status_id')->nullable()->constrained('user_statuses','status_id');
             $table->string('status_name',90);
