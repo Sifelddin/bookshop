@@ -11,4 +11,7 @@ class Department extends Model
     
 
     protected $primaryKey = 'dep_id';
+
+    protected $fillable = ['dep_name'];
+    public $timestamps = false;
 }

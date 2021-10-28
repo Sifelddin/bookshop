@@ -26,6 +26,8 @@ class CreateUsersTable extends Migration
             $table->decimal('user_coef',5,2)->nullable()->default(1);
             $table->string('user_phone',10)->unique();
             $table->decimal('user_salary',8,2)->nullable();
+            $table->string('user_role',90)->nullable();
+            $table->boolean('disabled')->nullable()->default(null);
             $table->string('email',255)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

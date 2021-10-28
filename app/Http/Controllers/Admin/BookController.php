@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        
+       return view('admin.books.books');
     }
 
     /**
@@ -23,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.books.book-create');
     }
 
     /**
@@ -40,10 +43,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Book  $Book
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Book $Book)
     {
         //
     }
@@ -51,10 +54,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Book  $Book
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Book $Book)
     {
         //
     }
@@ -63,10 +66,10 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Book  $Book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $Book)
     {
         //
     }
@@ -74,10 +77,10 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Book  $Book
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Book $Book)
     {
         //
     }
