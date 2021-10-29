@@ -16,9 +16,9 @@
             </div>
             <br>
             <div class=" p-4 flex justify-between bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <a class="hover:text-indigo-900" href="{{ route('employees') }}"> Users employe list</a>
-            <a class="hover:text-indigo-900" href=""> Users Client list</a>
-            <a class="hover:text-indigo-900" href=""> Users suppliers list</a>
+            <a class="hover:text-indigo-900" href="{{ route('employees') }}"> Users Employees list</a>
+            <a class="hover:text-indigo-900" href="{{ route('suppliers') }}"> Users Customers list</a>
+            <a class="hover:text-indigo-900" href="{{ route('suppliers') }}"> Users Suppliers list</a>
                 <!-- This example requires Tailwind CSS v2.0+ -->
 
   

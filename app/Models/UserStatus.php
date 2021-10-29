@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 
 class UserStatus extends Model
 {
@@ -13,5 +14,10 @@ class UserStatus extends Model
     public $timestamps = false;
 
     protected $fillable = ['general_status_id','status_name'];
+
+    public function users()
+    {
+        return $this->hasMany(Uses::class);
+    }
 
 }

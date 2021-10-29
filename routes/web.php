@@ -22,9 +22,11 @@ Route::get('/', function(){
     return view('welcome');
 });
 
-Route::get('/dashboard/users/employees',[UserTypeList::class, 'employees'])->name('employees');
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/dashboard', function () { return view('dashboard');})->name('dashboard');
+    Route::get('/dashboard/users/employees',[UserTypeList::class, 'employees'])->name('employees');
+    Route::get('/dashboard/users/customers',[UserTypeList::class, 'customers'])->name('customers');
+    Route::get('/dashboard/users/suppliers',[UserTypeList::class, 'suppliers'])->name('suppliers');
     Route::resource('/dashboard/books',BookController::class);
     Route::resource('/dashboard/categories',CategoryController::class)->except('show');
     Route::resource('/dashboard/userstatuses',UserStatusController::class)->except('show');
