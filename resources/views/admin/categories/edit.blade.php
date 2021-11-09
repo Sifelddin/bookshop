@@ -17,7 +17,7 @@
         </div>
         <br>
         <div>
-            <x-label for="CategoryParent" :value="__('CategoryParent :')" />
+            <x-label for="CategoryParent" :value="__('Category Parent :')" />
             <x-select class="w-full" id="CategoryParent" name="category_parent">
                 @foreach ($cat_parent as $value)
                 <option value="{{ $value->cat_id }}">{{ $value->cat_name }}</option>

@@ -7,11 +7,28 @@
 
     <div class="w-10/12 mx-auto">
         <div class="flex justify-between">
-        <h2 class="text-xl my-4">Employees List</h2>
-        <a href="{{ route('users.index') }}"><h2 class="text-xl my-4 mr-4">Back</h2></a>
-        
+        <h2 class="text-xl my-4">Customers List</h2>
+        <a href="{{ route('users.index') }}"><h2 class="text-xl my-4 mr-4 hover:underline">Back</h2></a>
     </div>
-        <x-user-table :users="$users">
+ 
+    @foreach ($statuses as $status)
+    
+     @if ($status->status_name == 'Administrator')
+          <div>
+            
+            {{ $status->status_name }}s :
+        <x-user-table :users="$status->users" :status="$status">
         </x-user-table>
+      </div> 
+      <br>
+        @else
+        <div>
+            {{ $status->status_name }}s :
+        <x-user-table :users="$status->users" :status="$status">
+        </x-user-table>
+        </div> 
+        @endif        
+            
+    @endforeach
     </div>
 </x-app-layout>

@@ -16,11 +16,11 @@
             <br>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <ul class="flex justify-between p-4">
-                    <a href="{{ route('categories.index') }}"><li>Categories</li></a>
-                    <a href="{{ route('books.index') }}"><li>books</li></a>
-                    <a href="{{ route('users.index') }}"><li>Users</li></a>
-                    <a href="{{ route('userstatuses.index') }}"><li>User_Statuses</li></a>
-                    <a href="{{ route('departements.index') }}"><li>departements</li></a>
+                    <a class="hover:underline" href="{{ route('categories.index') }}"><li>Categories</li></a>
+                    <a class="hover:underline" href="{{ route('books.index') }}"><li>books</li></a>
+                    <a class="hover:underline" href="{{ route('users.index') }}"><li>Users</li></a>
+                    <a class="hover:underline" href="{{ route('userstatuses.index') }}"><li>User_Statuses</li></a>
+                    <a class="hover:underline" href="{{ route('departements.index') }}"><li>departements</li></a>
                 </ul>
                 
             </div>

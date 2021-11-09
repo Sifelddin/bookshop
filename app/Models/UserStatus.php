@@ -15,9 +15,15 @@ class UserStatus extends Model
 
     protected $fillable = ['general_status_id','status_name'];
 
+
+    // general_statuses : Customer , Employe , Supplier
+    // statuses : Private , Professional, Adminstrateur , Commercial , Importer , Constructor
+
+
+
     public function users()
     {
-        return $this->hasMany(Uses::class);
+        return $this->hasMany(User::class,'user_status_id');
     }
 
 }

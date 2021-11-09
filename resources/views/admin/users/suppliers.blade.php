@@ -8,9 +8,26 @@
     <div class="flex justify-between">
     <h2 class="text-xl my-4">Suppliers List</h2>
     <a href="{{ route('users.index') }}"><h2 class="text-xl my-4 mr-4">Back</h2></a>
+    </div>
+    @foreach ($statuses as $status)
     
-</div>
-    <x-user-table :users="$users">
-    </x-user-table>
-</div>
+    
+   {{-- Importer: sub status  of  general status: Supplier   --}}
+    @if ($status->status_name == 'Importer')
+         <div>
+           
+             {{ $status->status_name }}s :
+       <x-user-table :users="$status->users" :status="$status">
+       </x-user-table>
+     </div> 
+     <br>
+       @else
+       <div>
+           {{ $status->status_name }}s :
+       <x-user-table :users="$status->users" :status="$status">
+       </x-user-table>
+       </div> 
+       @endif        
+       @endforeach
+    </div>    
 </x-app-layout>

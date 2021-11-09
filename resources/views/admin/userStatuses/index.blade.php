@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex justify-between p-6 bg-white border-b border-gray-200">
                  List of All the User Statuses  
-                    <a class="text-xl hover:text-indigo-900" href="{{ route('userstatuses.create') }}">create a new User Status</a>
+                    <a class="text-xl hover:text-indigo-900 hover:underline" href="{{ route('userstatuses.create') }}">create a new User Status</a>
                 </div>                
             </div>       
             <br>

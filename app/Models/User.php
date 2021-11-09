@@ -49,4 +49,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    
+    public function status()
+    {
+       return $this->belongsTo(UserStatus::class,'user_status_id','status_id');
+    }
+    public function departement()
+    {
+       return $this->belongsTo(Department::class,'user_dep_id','dep_id');
+    }
+
+
 }

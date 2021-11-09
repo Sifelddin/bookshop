@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex justify-between p-6 bg-white border-b border-gray-200">
                  List of All the Categories  
-                    <a class="text-xl hover:text-indigo-900" href="{{ route('categories.create') }}">create a new category</a>
+                    <a class="text-xl hover:text-indigo-900 hover:underline" href="{{ route('categories.create') }}">create a new category</a>
                 </div>
                 
             </div>
