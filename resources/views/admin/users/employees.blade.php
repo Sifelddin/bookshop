@@ -13,6 +13,8 @@
  
     @foreach ($statuses as $status)
     
+
+    {{-- Administrator: sub status  of  general status: Employe   --}}
      @if ($status->status_name == 'Administrator')
           <div>
             

@@ -14,6 +14,7 @@
  
     @foreach ($statuses as $status)
     
+    {{-- Private: sub status  of  general status: Customer   --}}
      @if ($status->status_name == 'Private')
           <div>
             

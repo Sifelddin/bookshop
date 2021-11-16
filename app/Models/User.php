@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -17,7 +18,7 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $primaryKey = 'user_id';  
+    protected $primaryKey = 'user_id';
 
 
     protected $fillable = [
@@ -52,15 +53,18 @@ class User extends Authenticatable
 
 
 
-    
+
     public function status()
     {
-       return $this->belongsTo(UserStatus::class,'user_status_id','status_id');
+        return $this->belongsTo(UserStatus::class, 'user_status_id', 'status_id');
     }
     public function departement()
     {
-       return $this->belongsTo(Department::class,'user_dep_id','dep_id');
+        return $this->belongsTo(Department::class, 'user_dep_id', 'dep_id');
     }
 
-
+    public function books()
+    {
+        return $this->HasMany(Book::class, 'book_user_id');
+    }
 }

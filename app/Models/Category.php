@@ -7,16 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
-    protected $fillable = ['cat_parent_id','cat_name'];
-    protected $primaryKey = 'cat_id';
-    public $timestamps = false;
+  use HasFactory;
+  protected $fillable = ['cat_parent_id', 'cat_name'];
+  protected $primaryKey = 'cat_id';
+  public $timestamps = false;
 
 
 
-    public function parent(){
-      return  $this->belongsTo(Category::class,'cat_parent_id','cat_id');
-    }
-
-   
+  public function books()
+  {
+    return  $this->hasMany(Book::class, 'book_cat_id', 'book_id');
+  }
 }
